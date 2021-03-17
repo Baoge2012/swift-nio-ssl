@@ -122,6 +122,10 @@ public class NIOSSLPrivateKey {
         return self._ref.assumingMemoryBound(to: EVP_PKEY.self)
     }
 
+    public var evpPkey: UnsafeMutablePointer<EVP_PKEY> {
+        return self._ref.assumingMemoryBound(to: EVP_PKEY.self)
+    }
+
     private init(withReference ref: UnsafeMutablePointer<EVP_PKEY>) {
         self._ref = UnsafeMutableRawPointer(ref) // erasing the type for @_implementationOnly import CNIOBoringSSL
     }
